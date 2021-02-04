@@ -1,0 +1,29 @@
+CS 2170 Assignment 5
+Name: Faiyaz Tanim (B00804542)
+
+1. From A4, I fixed a bug where the user can make a comment, in the post.php page, without even typing anything in the comment field. I fixed it by changing the conditional statement. Previously the conditional statement would simply check if the submit button has been pressed. Now it also checks if the comment field (comment box) has been left blank. Now the user can make a comment only after they have typed something in the comment field.
+
+2. Users can now only create an account only if they have a password that is atlas 7 characters long, has at least 1 capital letter, at least 1 digit and at least 1 special character. I have mainly user positive lookahead (?=), in the regex pattern, to check if the password contains atlas a digit, capital letter and a special character. Also made sure that the that the password is at least 7 characters in length at least ({7,}).
+
+The code will validate a password only after it matches with the regex pattern. The user will also be prompted with password error checks. Giving feedback to the user about why their password cannot be accepted (e.g. Need at least 7 characters, Need at least 1 special character etc.). 
+
+In the createaccount.php page, user entered passwords were easily hashed using the password_hash function, password_hash($user_password, PASSWORD_DEFAULT). The hashed passwords were then saved to the login table of the table.
+
+All sql queries in all the php pages has been updated to prepared statements. The prepared queries were first bound with the variables and then executed (for all types of queries SELECT as well as INSERT).
+
+•References
+
+The images ironman.jpg, volcano.jpg, cooking.jpg, galaxy.jpg, rainbow.jpg, fall.jpg and beach.jpg and other images were taken from creative commons. Retrieved from: https://search.creativecommons.org/photos/c4375e81-5772-4647-9e32-d5f5fe7b2172, 
+https://search.creativecommons.org/photos/1b8fd28b-c240-440f-b85e-c6677a3e2bc0
+https://search.creativecommons.org/photos/4042090a-e771-40db-b085-7167a39b94c7
+https://search.creativecommons.org/photos/4ae233da-7701-491e-8eb2-c13e665f574a
+https://search.creativecommons.org/photos/58ff39c4-f85e-4ff2-abb0-0cd8fbb0a134
+
+Dummy text was taken from ipsum.com. Retrieved from: https://www.lipsum.com
+
+->Useful Login information for accounts with secure, hased password:
+
+ Decrypted passwords of users:
+  1. Martha Stewart, password: Password1!
+  2. Jona, password: Password2!
+  3. Robert Downey, password: Password3!
